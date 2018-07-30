@@ -72,4 +72,13 @@ function hideCard(element)
 	console.log(element.classList);
 }
 
-hideCard(document.querySelector('.deck li'));
+let cardList = [];
+
+function saveCardList(element)
+{
+
+	cardList.push(element);
+	console.log(cardList);
+}
+
+saveCardList(document.querySelector('.deck li'));
