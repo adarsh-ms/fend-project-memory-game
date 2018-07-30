@@ -92,6 +92,26 @@ function cleanUpCardList()
 	console.log("cleaned up cardList array");
 }
 
-saveCardList(123);
-saveCardList(123);
-cleanUpCardList();
+function computeCardList(element)
+{
+	saveCardList(element);
+
+	const oldElement = cardList[0].firstElementChild.classList;
+	const newElement = element.nextSibling.firstElementChild.classList;
+
+	if(oldElement === newElement)
+	{
+		console.log("Cards are matching");
+		return(true);
+	}
+
+	else
+	{
+
+		return(false);
+	}
+
+}
+
+const val = computeCardList(document.querySelector('.deck li'));
+console.log(val);
