@@ -65,6 +65,11 @@ function displayCard(element)
 	console.log(element.classList);
 }
 
-const ele = document.querySelector('.deck li');
-console.log(ele);
-displayCard(ele);
+function hideCard(element)
+{
+
+	element.classList.remove('open', 'show');
+	console.log(element.classList);
+}
+
+hideCard(document.querySelector('.deck li'));
