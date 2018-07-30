@@ -68,7 +68,7 @@ function displayCard(element)
 function hideCard(element)
 {
 
-	element.classList.remove('open', 'show', 'unmatch');
+	element.className = "card";
 	console.log("hideCard",element.classList);
 }
 
@@ -226,3 +226,4 @@ document.querySelector('.deck').addEventListener('click',
 									}
 
 );
+
