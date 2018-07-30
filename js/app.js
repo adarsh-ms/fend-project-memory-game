@@ -137,6 +137,7 @@ function incrementMove()
 {
 	moves++;
 	console.log("moves",moves);
+	document.querySelector('.score-panel .moves').textContent=moves;
 }
 
 let remainingMatches =  8;
