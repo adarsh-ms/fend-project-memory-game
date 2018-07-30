@@ -147,3 +147,57 @@ function matchMonitor()
 	remainingMatches--;
 }
 
+function eventListener(event)
+{
+
+	incrementMove();
+
+
+	displayCard(event);
+	saveCardList(event);
+
+	if((cardList[0]!=event) && cardList.length!=0)
+	{
+
+		hideCard(event);
+		const result = computeCardList();
+		console.log(result);
+		
+		if(result === true)
+		{
+			
+			cardMatch(cardList[0],cardList[1]);	
+			matchMonitor();
+			if(remainingMatches === 0)
+			{
+
+				alert("you Won");
+			}
+		}
+
+		else
+		{
+			// hideCard(event);
+			console.log("Card mismatch");
+			setTimeout(cardMisMatch(cardList[0],cardList[1]),0);
+
+			setTimeout(function(){hideCard(cardList[0]);hideCard(cardList[1]);},400);
+		}
+
+		setTimeout(cleanUpCardList,400);
+	}
+}
+
+document.querySelector('.deck').addEventListener('click', 
+
+									function(event)
+									{ 
+
+										if(event.target.nodeName === 'LI')
+										{
+											console.log("event.target:",event.target);
+											eventListener(event.target);
+										}
+									}
+
+);
