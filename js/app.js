@@ -62,32 +62,32 @@ function displayCard(element)
 {
 	
 	element.classList.add('open', 'show');
-	console.log(element.classList);
+	console.log("displayCard",element.classList);
 }
 
 function hideCard(element)
 {
 
 	element.classList.add('open', 'show', 'unmatch');
-	console.log(element.classList);
+	console.log("hideCard",element.classList);
 }
 
 function cardMatch(element1,element2)
 {
 
 	element1.className = "card open show match";
-	console.log(element1.classList);
+	console.log("cardMatch",element1.classList);
 	element2.className = "card open show match";
-	console.log(element2.classList);
+	console.log("cardMatch",element2.classList);
 }
 
 function cardMisMatch(element1,element2)
 {
 
 	element1.className = "card";
-	console.log(element1.classList);
+	console.log("cardMisMatch",element1.classList);
 	element2.className = "card";
-	console.log(element2.classList);
+	console.log("cardMisMatch",element2.classList);
 }
 
 let cardList = [];
@@ -96,18 +96,18 @@ function saveCardList(element)
 {
 
 	cardList.push(element);
-	console.log(cardList);
+	console.log("saveCardList",cardList);
 }
 
 function cleanUpCardList()
 {
 
-	for(let j=0;j<cardList.length;j++)
+	for(let j=0;j<=cardList.length;j++)
 	{
 		cardList.pop();
 	}
 
-	console.log("cleaned up cardList array");
+	console.log("cleaned up cardList array",cardList);
 }
 
 function computeCardList()
@@ -117,7 +117,7 @@ function computeCardList()
 	const oldElement = cardList[0].firstElementChild.classList;
 	const newElement = cardList[1].firstElementChild.classList;
 
-	if(oldElement === newElement)
+	if(oldElement.toString() === newElement.toString())
 	{
 		console.log("Cards are matching");
 		return(true);
@@ -136,7 +136,7 @@ let moves = 0;
 function incrementMove()
 {
 	moves++;
-	console.log(moves);
+	console.log("moves",moves);
 }
 
 let remainingMatches =  8;
@@ -146,3 +146,4 @@ function matchMonitor()
 
 	remainingMatches--;
 }
+
