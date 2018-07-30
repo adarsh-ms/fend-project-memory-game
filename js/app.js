@@ -68,9 +68,11 @@ function displayCard(element)
 function hideCard(element)
 {
 
-	element.classList.remove('open', 'show');
+	element.classList.add('open', 'show', 'unmatch');
 	console.log(element.classList);
 }
+
+hideCard(document.querySelector('.deck li'));
 
 let cardList = [];
 
@@ -120,3 +122,5 @@ function incrementMove()
 	moves++;
 	console.log(moves);
 }
+
+
