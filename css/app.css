@@ -40,7 +40,8 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background: rgb(2,0,36);
+    background: linear-gradient(352deg, rgba(2,0,36,1) 0%, rgba(0,249,255,1) 0%, rgba(81,199,244,1) 48%, rgba(168,115,232,1) 100%);     
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -78,6 +79,12 @@ h1 {
 .deck .card.match {
     cursor: default;
     background: #02ccba;
+    font-size: 33px;
+}
+
+.deck .card.unmatch {
+    cursor: default;
+    background: #ff0070;
     font-size: 33px;
 }
 
