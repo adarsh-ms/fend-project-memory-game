@@ -84,9 +84,9 @@ function cardMatch(element1,element2)
 function cardMisMatch(element1,element2)
 {
 
-	element1.className = "card";
+	element1.className = "card open show unmatch";
 	console.log("cardMisMatch",element1.classList);
-	element2.className = "card";
+	element2.className = "card open show unmatch";
 	console.log("cardMisMatch",element2.classList);
 }
 
