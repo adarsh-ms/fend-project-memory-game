@@ -30,8 +30,7 @@ const fragment = document.createDocumentFragment();
 
 function shuffleNodes()
 {
-    const nodes = list.children; 
-    let i = 0;
+    let nodes = list.children, i = 0;
     nodes = Array.prototype.slice.call(nodes);
     nodes = shuffle(nodes.slice(0));
     while(i < nodes.length)
@@ -58,3 +57,14 @@ console.log(final1 - initial1);
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+function displayCard(element)
+{
+	
+	element.classList.add('open', 'show');
+	console.log(element.classList);
+}
+
+const ele = document.querySelector('.deck li');
+console.log(ele);
+displayCard(ele);
