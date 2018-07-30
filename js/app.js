@@ -148,11 +148,35 @@ function matchMonitor()
 	remainingMatches--;
 }
 
+function startCalculation()
+{
+
+	let nodes = document.querySelector('.score-panel .stars');
+	nodes = Array.prototype.slice.call(nodes.children).slice(0);
+	
+	if(moves > 8)
+	{
+
+		console.log("nodes",nodes);
+		nodes[2].firstElementChild.classList.add('hideStars');
+		console.log("startCalculation",nodes[2].firstElementChild.classList);
+	}
+
+	if(moves > 12)
+	{
+
+		console.log("nodes",nodes);
+		nodes[1].firstElementChild.classList.add('hideStars');
+		console.log("startCalculation",nodes[2].firstElementChild.classList);
+	}
+
+}
+
 function eventListener(event)
 {
 
 	incrementMove();
-
+	startCalculation();
 
 	displayCard(event);
 	saveCardList(event);

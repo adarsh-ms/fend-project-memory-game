@@ -173,6 +173,15 @@ h1 {
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
+    color: #00ffd4;
+}
+
+.score-panel .stars .hideStars{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    color: #000;
 }
 
 .score-panel .stars li {
