@@ -68,7 +68,7 @@ function displayCard(element)
 function hideCard(element)
 {
 
-	element.classList.add('open', 'show', 'unmatch');
+	element.classList.remove('open', 'show', 'unmatch');
 	console.log("hideCard",element.classList);
 }
 
