@@ -139,4 +139,10 @@ function incrementMove()
 	console.log(moves);
 }
 
+let remainingMatches =  8;
 
+function matchMonitor()
+{
+
+	remainingMatches--;
+}
