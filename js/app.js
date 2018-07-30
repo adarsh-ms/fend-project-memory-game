@@ -92,12 +92,12 @@ function cleanUpCardList()
 	console.log("cleaned up cardList array");
 }
 
-function computeCardList(element)
+function computeCardList()
 {
-	saveCardList(element);
+	// saveCardList(element);
 
 	const oldElement = cardList[0].firstElementChild.classList;
-	const newElement = element.nextSibling.firstElementChild.classList;
+	const newElement = cardList[1].firstElementChild.classList;
 
 	if(oldElement === newElement)
 	{
@@ -113,5 +113,10 @@ function computeCardList(element)
 
 }
 
-const val = computeCardList(document.querySelector('.deck li'));
-console.log(val);
+let moves = 0;
+
+function incrementMove()
+{
+	moves++;
+	console.log(moves);
+}
