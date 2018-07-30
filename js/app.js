@@ -12,7 +12,7 @@
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -25,6 +25,28 @@ function shuffle(array) {
     return array;
 }
 
+const list = document.querySelector('.deck');
+const fragment = document.createDocumentFragment();
+
+function shuffleNodes()
+{
+    const nodes = list.children; 
+    let i = 0;
+    nodes = Array.prototype.slice.call(nodes);
+    nodes = shuffle(nodes.slice(0));
+    while(i < nodes.length)
+    {
+        fragment.appendChild(nodes[i]);
+        ++i;
+    }
+
+   	list.appendChild(fragment);
+}
+
+const initial1 = performance.now();
+shuffleNodes();
+const final1 = performance.now();
+console.log(final1 - initial1);
 
 /*
  * set up the event listener for a card. If a card is clicked:
