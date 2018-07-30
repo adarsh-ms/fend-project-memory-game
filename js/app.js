@@ -148,11 +148,18 @@ function matchMonitor()
 	remainingMatches--;
 }
 
-function startCalculation()
+function starCalculation()
 {
 
 	let nodes = document.querySelector('.score-panel .stars');
 	nodes = Array.prototype.slice.call(nodes.children).slice(0);
+	
+	if(moves <= 8)
+	{
+
+		nodes[2].firstElementChild.className = 'fa fa-star';
+		nodes[1].firstElementChild.className = 'fa fa-star';
+	}
 	
 	if(moves > 8)
 	{
@@ -175,41 +182,46 @@ function startCalculation()
 function eventListener(event)
 {
 
-	incrementMove();
-	startCalculation();
-
-	displayCard(event);
-	saveCardList(event);
-
-	if((cardList[0]!=event) && cardList.length!=0)
+	if((event.toString() != cardList[0]) && (event.toString() != cardList[1]))
 	{
 
-		hideCard(event);
-		const result = computeCardList();
-		console.log(result);
-		
-		if(result === true)
+		incrementMove();	
+		starCalculation();
+
+		displayCard(event);
+		saveCardList(event);
+
+		if((cardList[0]!=event) && cardList.length!=0)
 		{
+
+			hideCard(event);
+			const result = computeCardList();
+			console.log(result);
 			
-			cardMatch(cardList[0],cardList[1]);	
-			matchMonitor();
-			if(remainingMatches === 0)
+			if(result === true)
 			{
+				
+				cardMatch(cardList[0],cardList[1]);	
 
-				alert("you Won");
+				matchMonitor();
+				if(remainingMatches === 0)
+				{
+
+					alert("you Won");
+				}
 			}
+
+			else
+			{
+				// hideCard(event);
+				console.log("Card mismatch");
+				setTimeout(cardMisMatch(cardList[0],cardList[1]),0);
+
+				setTimeout(function(){hideCard(cardList[0]);hideCard(cardList[1]);},400);
+			}
+
+			setTimeout(cleanUpCardList,400);
 		}
-
-		else
-		{
-			// hideCard(event);
-			console.log("Card mismatch");
-			setTimeout(cardMisMatch(cardList[0],cardList[1]),0);
-
-			setTimeout(function(){hideCard(cardList[0]);hideCard(cardList[1]);},400);
-		}
-
-		setTimeout(cleanUpCardList,400);
 	}
 }
 
@@ -226,4 +238,3 @@ document.querySelector('.deck').addEventListener('click',
 									}
 
 );
-
