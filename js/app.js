@@ -72,7 +72,23 @@ function hideCard(element)
 	console.log(element.classList);
 }
 
-hideCard(document.querySelector('.deck li'));
+function cardMatch(element1,element2)
+{
+
+	element1.className = "card open show match";
+	console.log(element1.classList);
+	element2.className = "card open show match";
+	console.log(element2.classList);
+}
+
+function cardMisMatch(element1,element2)
+{
+
+	element1.className = "card";
+	console.log(element1.classList);
+	element2.className = "card";
+	console.log(element2.classList);
+}
 
 let cardList = [];
 
