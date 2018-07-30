@@ -81,4 +81,17 @@ function saveCardList(element)
 	console.log(cardList);
 }
 
-saveCardList(document.querySelector('.deck li'));
+function cleanUpCardList()
+{
+
+	for(let j=0;j<cardList.length;j++)
+	{
+		cardList.pop();
+	}
+
+	console.log("cleaned up cardList array");
+}
+
+saveCardList(123);
+saveCardList(123);
+cleanUpCardList();
