@@ -181,10 +181,7 @@ function starCalculation()
 
 function eventListener(event)
 {
-
-	if((event.toString() != cardList[0]) && (event.toString() != cardList[1]))
-	{
-
+		
 		incrementMove();	
 		starCalculation();
 
@@ -202,7 +199,6 @@ function eventListener(event)
 			{
 				
 				cardMatch(cardList[0],cardList[1]);	
-
 				matchMonitor();
 				if(remainingMatches === 0)
 				{
@@ -222,7 +218,6 @@ function eventListener(event)
 
 			setTimeout(cleanUpCardList,400);
 		}
-	}
 }
 
 document.querySelector('.deck').addEventListener('click', 
@@ -230,9 +225,9 @@ document.querySelector('.deck').addEventListener('click',
 									function(event)
 									{ 
 
-										if(event.target.nodeName === 'LI')
+										if(event.target.classList.toString() == "card")
 										{
-											console.log("event.target:",event.target);
+											console.log("event.target:",event.target,"array ",event.target.classList.toString());
 											eventListener(event.target);
 										}
 									}
